@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream.io</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <header>
+        <a href="" class="logo"><img src="images/Untitled-1-removebg.png" alt=""></a>
+        <ul class="nav" id="nav-bar">
+            <li>
+                <label for="" onclick="slidebarDeactive()"><i class="fa-solid fa-xmark"></i></label>
+            </li>
+            <li>
+                <a href=""><i class="fa fa-home" aria-hidden="true"></i></a>
+            </li>
+            <li><a href="">Adults</a></li>
+            <li><a href="">Kids</a></li>
+            <li><a href="">Anime</a></li>
+            <li><a href="">My List</a></li>
+            
+        </ul>
+        <div class="menu-ico">
+            <label for="sidebar-active" onclick="sliderButton()"><i class="fa-solid fa-bars"></i></label>
+            
+        </div>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="search...">
+            <i class="fa fa-search"></i>
+        </div>
+        <div class="for-mobile">
+            <label for="" onclick="searchBarToggleDown()" class="search-ico"><i class="fa fa-search"></i></label>
+        </div>
+        
+    </header>
+    <div class="banner" id="background" >
+        <div class="info-container">
+            <div class="display-form">
+                <div class="display-poster">
+                    <img src="images/My-demon-poster.png" id="poster-display">
+                </div>
+                <div class="title-bar">
+                    <h2 id="title-h4"></h2><br>
+                    <p id="description-E"> 
+                    </p>
+                    <h4 id="release-E"></h4>
+                    <div class="links">
+                        <a href="" id="gen"></a>
+                        <a href="" id="gen1"></a>
+                        <a href="" id="gen2"></a>
+                    </div>
+                    <div class="additional-buttons">
+                        <button onclick="addInfo(Position)">INFO</button>
+                        <button onclick="addSource(Position)">Where to watch</button>
+                        <button onclick="addCast(Position)">CAST</button>
+                    </div>
+                    <div class="labels" id="labels">
+                        <h4 class="TEX" id="B">Directed By: <p class="innertext" id="director">uqedebecb </p></h4>
+                        <h4 class="TEX" id="C" >Written By: <p class="innertext" id="writter"> 3hudg4i23r </p></h4>
+                        <h4 class="TEX"><p id="nameofthemovie" class="innertext "> </p> <p class="middle" id="middle">is Currently available at</p> <a href=""><img id="sourceIMG" src=""></a></h4>
+                        <h4 class="TEX" id="D">Cast: <p class="innertext" id="CastInfo">Seon-ho Hong Bo-hee, Hae Hwa, Han Seol-hee</p>and more </h4>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="display-links">
+                <table id="table">
+                    <tr>
+                        <th>Link</th>
+                        <th>Season</th>
+                        <th>Res</th>
+                        <th>Format</th>
+                    </tr>
+    
+                    <tr>
+                        <td><a href="https://mega.nz/folder/zIczTYLT#QbfcpS0AOnTVqtxsG0-XHw" id="download1">DOWNLOAD</a></td>
+                        <td><a href="" id="season1"></a></td>
+                        <td><a href="">720p</a></td>
+                        <td><a href="">Mkv</a></td>
+                    </tr>
+
+                </table>
+            </div> 
+            
+        </div>
+        
+    </div>
+
+    <div class="search-function" id="search-function">
+        <div class="search-bar flex">
+            <input type="text" placeholder="search...">
+            <label for="" onclick="searchBarToggleUp()"><i class="fa-solid fa-xmark"></i></label>
+        </div>
+        
+        
+    </div>
+    
+    <script src="script2.js"></script>
+    <script>
+        let Dow 
+        let Ses 
+        let Position = 13;
+        function addInfo(givenIndex){
+            document.getElementById('director').innerHTML = MOVIE[givenIndex].director
+            document.getElementById('writter').innerHTML = MOVIE[givenIndex].writter
+            document.getElementById('C').style.display = 'inline'
+            document.getElementById('B').style.display = 'block'
+            document.getElementById('director').style.display = 'inline'
+            document.getElementById('writter').style.display = 'inline'
+            
+            document.getElementById('nameofthemovie').style.display  = 'none'
+            document.getElementById('sourceIMG').style.display = 'none'
+            document.getElementById('middle').style.display = 'none'
+
+            document.getElementById('D').style.display = 'none'
+        }
+        function addSource(givenIndex){
+            document.getElementById('C').style.display = 'none'
+            document.getElementById('B').style.display = 'none'
+            document.getElementById('director').style.display = 'none'
+            document.getElementById('writter').style.display = 'none'
+            document.getElementById('D').style.display = 'none'
+            
+            let SourceAdderss = MOVIE[givenIndex].source.toLowerCase()
+            let Summetion = SourceAdderss+'.png'
+            let ErrorForNoSource;
+            if(SourceAdderss ==='0'){
+                ErrorForNoSource = 'Opps Seems like we Dont know the Source for this one but you can still download from here'
+                document.getElementById('middle').style.display = 'inline'
+                document.getElementById('middle').innerText = ErrorForNoSource
+            }else{
+                document.getElementById('nameofthemovie').style.display = 'inline'
+                document.getElementById('sourceIMG').style.display = 'inline'
+                document.getElementById('middle').style.display = 'inline'
+                document.getElementById('nameofthemovie').innerText = MOVIE[givenIndex].movieName
+                document.getElementById('sourceIMG').src = `images/${Summetion}`
+            }
+            
+
+        }
+        function addCast(givenIndex){
+            document.getElementById('C').style.display = 'none'
+            document.getElementById('B').style.display = 'none'
+            document.getElementById('director').style.display = 'none'
+            document.getElementById('writter').style.display = 'none'
+
+            document.getElementById('nameofthemovie').style.display  = 'none'
+            document.getElementById('sourceIMG').style.display = 'none'
+            document.getElementById('middle').style.display = 'none'
+
+            document.getElementById('D').style.display = 'inline'
+            document.getElementById('CastInfo').innerText = MOVIE[givenIndex].cast
+        }
+            function  updateContent(givenIndex){
+                let pos = 1;
+                let id = 0;
+        document.getElementById('background').style.background = `url(images/bg/${MOVIE[givenIndex].background})`
+        document.getElementById('background').style.backgroundSize = 'cover'
+        document.getElementById('background').style.backgroundPosition= 'center';
+        document.getElementById('poster-display').src = `images/${MOVIE[givenIndex].poster}`
+        document.getElementById('title-h4').innerHTML = MOVIE[givenIndex].name
+        document.getElementById('download'+pos).href = MOVIE[givenIndex].downloadlink
+        document.getElementById('description-E').innerHTML = MOVIE[givenIndex].description
+        document.getElementById('release-E').innerHTML = MOVIE[givenIndex].relese
+        document.getElementById('gen').innerHTML = MOVIE[givenIndex].genre
+        document.getElementById('gen1').innerHTML = MOVIE[givenIndex].similarGenre1
+        document.getElementById('gen2').innerHTML = MOVIE[givenIndex].similarGenre2
+        document.getElementById('season'+pos).innerHTML = MOVIE[givenIndex].season[id]
+    
+        //document.getElementById('table').innerHTML =document.getElementById('table').innerHTML+ `  <tr>
+        //                <td><a href="https://mega.nz/folder/zIczTYLT#QbfcpS0AOnTVqtxsG0-XHw" id="download">DOWNLOAD</a></td>
+        //                <td><a href="" id="season2"></a></td>
+        //                <td><a href="">720p</a></td>
+        //                <td><a href="">Mkv</a></td>
+       //            </tr>`
+      //  document.getElementById('season2').innerHTML = MOVIE[givenIndex].season[1]
+
+      if(MOVIE[givenIndex].moreLink >0){
+        for(let i =0;i <MOVIE[givenIndex].moreLink - 1; i++){
+            pos++
+            id++
+            let Dow = "download"+pos 
+            let Ses ="season"+pos
+                    document.getElementById('table').innerHTML =document.getElementById('table').innerHTML+ `  <tr>
+                        <td><a href="https://mega.nz/folder/zIczTYLT#QbfcpS0AOnTVqtxsG0-XHw" id="${Dow}">DOWNLOAD</a></td>
+                        <td><a href="" id="${Ses}"></a></td>
+                        <td><a href="">720p</a></td>
+                        <td><a href="">Mkv</a></td>
+                   </tr>`
+                  
+        document.getElementById(Ses).innerHTML = MOVIE[givenIndex].season[id]
+        document.getElementById(Dow).href = MOVIE[givenIndex].downloadlink[id]
+                   console.log('it has multiple download links which are '+MOVIE[givenIndex].moreLink)
+    }
+      }
+      
+    }
+    updateContent(Position)
+    </script>
+</body>
+</html>
