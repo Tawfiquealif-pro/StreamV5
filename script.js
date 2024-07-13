@@ -33,6 +33,7 @@ const GENRE =['K-Drama',//0
     'Crime',//23
     'Comedy',//24
     'Adventure',//25
+    'Love-Tringle',//26
 ]
 const MOVIE = [
     {title:"My-demon-title.png",
@@ -394,7 +395,7 @@ background:"bg-Drifting-Home.jpg",
 ageRestriction:"10+",
 year:"2022",
 genre:GENRE[16],
-similarGenre1:GENRE[14] ,
+similarGenre1:GENRE[25] ,
 similarGenre2:GENRE[3] ,
 downloadlink:["https://mega.nz/folder/j9BUVDzD#-hCS0_CBcrX9bRSFLJygGA"],
 moreLink:0,
@@ -427,6 +428,83 @@ duration:'10H 23min',
 trailer:"y2mate.com - IVE 아이브 I AM MV_1440p.mp4",
 description:"Hundreds of cash-strapped players accept a strange invitation to compete in children's games. Inside, a tempting prize awaits — with deadly high stakes.",
 },
+{title:"startup-title.png",
+poster:"startup-poster.jpg",
+movieName:"Start-up",
+name:"Start-Up DUAL audio hevc, Hindi ,English",
+source:"netflix", 
+director:"Oh Chung-hwan",
+writter:" Hwang Dong-hyuk",
+cast:"Bae Suzy, Nam Joo-hyuk, Kim Seon-ho",
+rating:"8/10",
+relese:"Oct 17, 2020 South korea",
+detailsSRC: 'startup-DE.html',
+background:"bg-startup.jpg",
+ageRestriction:"13+",
+year:"2020",
+genre:GENRE[0],
+similarGenre1:GENRE[12] ,
+similarGenre2:GENRE[26] ,
+downloadlink:["https://mega.nz/folder/n0B1TaqC#CStq93jeDInLWJElyPNv5A/folder/u9Z1yAKJ"],
+moreLink:0,
+season:["season-1"],
+duration:'16H 23min',
+trailer:"y2mate.com - IVE 아이브 I AM MV_1440p.mp4",
+description:"Young entrepreneurs strive hard to turn their tech dreams into reality while attempting to find love and success in this competitive world.",
+},
+{title:"your name-title.png",
+poster:"Your-name.jpg",
+movieName:"Your name",
+name:"Your name DUAL audio hevc, Hindi ,English ,Japanese",
+source:"0", 
+director:"Makoto Shinkai",
+writter:" Makoto Shinkai, Clark Cheng",
+cast:"Ryunosuke Kamiki, Mone Kamishiraishi, Ryo Narita",
+rating:"8.5/10",
+relese:"Apr 7,2017 Japan",
+detailsSRC: 'your name-DE.html',
+background:"bg-your-name.jpg",
+ageRestriction:"16+",
+year:"2017",
+genre:GENRE[3],
+similarGenre1:GENRE[14] ,
+similarGenre2:GENRE[16] ,
+downloadlink:["https://mega.nz/folder/n0B1TaqC#CStq93jeDInLWJElyPNv5A/folder/u9Z1yAKJ"],
+moreLink:0,
+season:["season-1"],
+duration:'16H 23min',
+trailer:"y2mate.com - IVE 아이브 I AM MV_1440p.mp4",
+description:"Two teenagers share a profound, magical connection upon discovering they are swapping bodies. Things manage to become even more complicated when the boy and girl decide to meet in person.",
+},
+{title:"the-boys-title.png",
+poster:"the-boys.jpg",
+movieName:"The Boys",
+name:"The boys (season-4 only) English ",
+source:"prime", 
+director:"Philip Sgriccia, Frederick E.O. Toye",
+writter:" Garth Ennis, Eric Kripke, Darick Robertson",
+cast:"Karl Urban, Jack Quaid, Antony Starr",
+rating:"8.7/10",
+relese:"Jul 26,2019 USA",
+detailsSRC: 'the-boys-DE.html',
+background:"bg-the-boys.jpg",
+ageRestriction:"18+",
+year:"2019",
+genre:GENRE[17],
+similarGenre1:GENRE[24] ,
+similarGenre2:GENRE[10] ,
+downloadlink:["https://mega.nz/folder/ZJ50lYrB#f4bIYfmidF8ZJCVbK3ommg",
+    "https://mega.nz/folder/Mv1Una5C#P1Nrxni8NQhuQuQ7hhBEBQ",
+    "https://mega.nz/folder/ZnEC1CpD#Ia0vqwQEmEjGxAhRTNj0iA",
+    "https://mega.nz/folder/qINWFZxC#J9HAncKVp-78kAdr9YlEwg",
+    "https://mega.nz/folder/iNN00LgC#Qa_mphtQPubnoJiGD3DCVQ"],
+moreLink:5,
+season:["EP-1-3","EP-4","EP-5","EP-6","Ep-7"],
+duration:'16h',
+trailer:"y2mate.com - IVE 아이브 I AM MV_1440p.mp4",
+description:"THE BOYS is an irreverent take on what happens when superheroes, who are as popular as celebrities, as influential as politicians and as revered as Gods, abuse their superpowers rather than use them for good. It's the powerless against the super powerful as The Boys embark on a heroic quest to expose the truth about “The Seven,” and their formidable Vought backing.",
+},
+
     ]
 function AutoPushContent(){
 
@@ -527,7 +605,7 @@ function getRandomNumber(min, max) {
 
 let DuplicateNumbers = [];
 
-for (let i = 0; i <= 18; i++){
+for (let i = 0; i <= 17; i++){
     //randomNumber = getRandomNumber(0, MOVIE.length - 1)
     randomNumber++
     let Pushnumber = DuplicateNumbers.push(randomNumber)
@@ -679,5 +757,5 @@ function showContent(){
     document.getElementById('contentName').innerText = inputSearch
 }
 
-// This will print an array of duplicated elements, if any.
+console.log(searchMovie("suzume"))
 
